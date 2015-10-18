@@ -1,0 +1,27 @@
+/*
+Author: Circle Squared Data Labs
+Author URI: http://www.csq.com
+Description: stylesheet for mvc tool.
+Version: 1.0.0
+License: GNU General Public License 2.0
+License URI: license.txt
+Tags: responsive-layout, fluid-layout, custom-background, custom-menu, custom-maps, AJAX, Facebook Graph API, Autocomplete SearchBox, Heatmap Visualizations, Google Maps
+*/
+html,body {
+    z-index: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+#map-canvas {
+    position:absolute;
+    height:100%;
+}
+nav.navbar {
+    margin-bottom: 0px;
+}
