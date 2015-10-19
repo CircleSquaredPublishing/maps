@@ -3,7 +3,16 @@ var TILE_SIZE = 256;
 var desiredRadiusPerPointInMeters = 150;
 var map, marker, infoWindow, geocoder, heatmap;
 var infoWindow = new google.maps.InfoWindow();
- var bounds = new google.maps.LatLngBounds();
+var bounds = new google.maps.LatLngBounds();
+var markers=[];
+
+function clearOverlays() {
+    if (markers.length != 0) {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+    }
+}
 /*Begin Mercator Projection*/
 function bound(value, opt_min, opt_max) {
     if (opt_min !== null) value = Math.max(value, opt_min);
@@ -224,7 +233,7 @@ function ShowLocation(latlng, address, addr_type) {
                         map: map,
                         infowindow: html
                     });
-
+                    markers.push(marker);
                     google.maps.event.addListener(marker, 'click', function () {
                         infoWindow.setContent(this.infowindow);
                         infoWindow.open(map, this);
