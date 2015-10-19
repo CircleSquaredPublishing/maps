@@ -1,0 +1,41 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+#map-canvas {
+    width: 100%;
+    height: calc(100% - 0);
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    bottom: 0;
+    overflow: hidden;
+}
+#iwsw {
+    width: 600px;
+    height: 400px;
+}
+.gm-style-iw {
+    top: 0 !important;
+    left: 0 !important;
+    background-color: transparent;
+}
+#iw-container {
+    margin-bottom: 10px;
+}
+#iw-container .iw-title {
+    background-color: transparent;
+    color: white;
+    margin: 0;
+}
+#iw-container .iw-content {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-right: 1px;
+    padding: 15px 5px 20px 15px;
+    max-height: 140px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
