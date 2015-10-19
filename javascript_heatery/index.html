@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Heatery Facebook Data Source</title>
+    <meta charset="utf-8">
+    <!-- JQUERY 2.1.4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- GOOGLE MAPS V3.EXP INCLUDES VISUALIZATION AND PLACES LIBRARIES  -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=visualization,places,geometry"></script>
+    <!-- BOOTSTRAP 3.3.5 MINIFIED CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+    <div class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a id="bizName" class="navbar-brand" href="#">Circle Squared Data Labs</a>
+            <a id="dataSource" class="navbar-brand" href="#">Data Source: Facebook Restaurant Data</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+           
+           
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="form-group" style="margin-right:20px;">
+                <form class="form-inline" action="" method="post">
+                    <div id="gc-input" class="input-group" style="margin-top:10px; float: right;">
+                        <span class="input-group-btn">
+<input class="btn btn-success btn-md" id="locate" value="Find" />
+</span>
+                        <input style="width:250px; " id="address" class="form-control" type="text" placeholder="Your Hot Spot." />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="map-canvas"></div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
