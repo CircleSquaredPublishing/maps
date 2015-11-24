@@ -1,1 +1,0 @@
-{"error":{"message":"Invalid parameter","type":"FacebookApiException","code":100,"error_subcode":1489001,"is_transient":false,"error_user_title":"Could not determine coordinates of place","error_user_msg":"We couldn't determine the coordinates of this location. Check if your latitude and longitude are in range, and verify the format of the location.","fbtrace_id":"Ft26XZ\/dM7U"}}
