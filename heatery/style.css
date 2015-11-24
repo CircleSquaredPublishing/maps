@@ -1,0 +1,248 @@
+/*****************************************************************************
+*File Name: style.css
+*Author: Circle Squared Data Labs
+*Author URI: https://www.csq2.com
+*Description: Heatery Map stylesheet
+*Version: 1.0.0
+******************************************************************************/
+
+html, body {
+  height: 100%;
+}
+body {
+  padding-top: 50px;
+}
+#map-canvas {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 0);
+  background-color: #000;
+}
+#main, #main>.row {
+  height: 100%;
+}
+#main>.row {
+  overflow-y: scroll;
+}
+#main {
+  float: left;
+}
+#left {
+  margin-top: 30px;
+}
+
+/*Begin Navbar*/
+
+#hm_navbar_top, #hm_navbar_collapse {
+  background-color: rgba(33, 37, 46, 1);
+  border-color: transparent !important;
+  color: #DCF7F3;
+}
+#hm_navbar_brand_img {
+  height: 45px;
+  width: 45px;
+  margin-top: -11px;
+}
+#hm_navbar_top li>a:hover, #hm_navbar_top .active>a, #hm_navbar_top li>a:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: #DCF7F3;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #DCF7F3;
+}
+
+/*Begin Buttons*/
+
+#gc-search-box {
+  width: 250px;
+  background-color: rgba(233, 236, 217, 0.7);
+  border: none;
+  color: #D5DED9;
+  letter-spacing: 1.5px;
+}
+#btn-find {
+  background-color: #4B3E4D;
+  color: #dcf7f3;
+  border-color: transparent;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-weight: 200;
+}
+#btn-find:hover {
+  background-color: #E33258;
+  color: #D5DED9;
+  border: 1px solid #D5DED9;
+}
+
+/* Start sidebar info panel */
+
+.panel {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+.panel-default {
+  min-width: 375px;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+#info_head, #info_card {
+  color: #D5DED9;
+  border-color: transparent;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  background-color: rgba(33, 37, 46, 0.7);
+
+}
+#fb_cover {
+  width: 100%;
+  padding-bottom: 10px;
+}
+#sb-content {
+  overflow-y: auto;
+  max-height: 175px;
+  font-size: 12px;
+  line-height: 18px;
+}
+#sb-title {
+  margin: 10px 0px;
+  padding: 8px;
+  color: #D5DED9;
+  background-color: rgba(228, 37, 53, 0.8);
+  font-size: 16px;
+  font-weight: 600;
+}
+#profile_info {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 0px;
+  font-family: helvetica;
+  font-size: 13px;
+  font-weight: 100;
+}
+#profile_pic>img {
+  width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+/*
+.panel {
+  margin-bottom: 0px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.panel-default {
+  min-width: 375px;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+panel-heading {
+  padding: 10px 15px;
+  border-bottom: none !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+#info_head, #info_card {
+  color: #D5DED9;
+  border-color: transparent;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  background-color: rgba(33, 37, 46, 0.7);
+
+}
+#fb_cover {
+  width: 100%;
+  padding-bottom: 10px;
+}
+#sb-content {
+  overflow-y: auto;
+  max-height: 175px;
+  font-size: 12px;
+  line-height: 18px;
+}
+#sb-title {
+  margin: 10px 0px;
+  padding: 8px;
+  color: #D5DED9;
+  background-color: rgba(228, 37, 53, 0.8);
+  font-size: 16px;
+  font-weight: 600;
+}
+#profile_info {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 0px;
+  font-family: helvetica;
+  font-size: 13px;
+  font-weight: 100;
+}
+#profile_pic>img {
+  width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+*/
+/* Start infowindow style */
+
+#iw-container {
+  float: left;
+  background-color: rgba(33, 37, 46, 0.7);
+  font-family: helvetica;
+  font-size: 14px;
+}
+#iw-details {
+  font-weight: 600;
+}
+#iw-title {
+  font-weight: 600;
+  background-color: rgba(228, 37, 53, 0.8);
+}
+
+/* Start modal style */
+#myModal {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#myModalHeader {
+  min-height: 16.43px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #DCF7F3;
+  text-align: center;
+}
+#myModalBody {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #DCF7F3;
+  text-align: center;
+}
+#myModalBody>p {
+  font-size: 16px;
+  text-align: justify;
+  line-height: 30px;
+}
+#myModalHeaderImg {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+.panel {
+  margin-bottom: 0px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+panel-heading {
+  padding: 10px 15px;
+  border-bottom: none !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
