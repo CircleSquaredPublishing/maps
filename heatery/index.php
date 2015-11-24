@@ -41,7 +41,13 @@
                     <div id="profile_pic" class="col-xs-12">
                         <img src="{{fb_cover}}" data-pin-nopin="true">
                     </div>
-                  </div>
+                </div>
+                <div class="row">
+                    <div id="sb-content" class="col-xs-12">
+                        {{fb_about}}
+                        {{fb_description}}
+                    </div>
+                </div>
                 {{/if}}{{/each}}
             </div>
         </div>

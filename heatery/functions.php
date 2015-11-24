@@ -9,79 +9,12 @@
 * Author:       Circle Squared Data Labs
 * Author URI:   https://www.heatery.io
 */
-?>
 
-<!-- Modal
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-      <div class="modal-content">
-          <div id="myModalHeader" class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-              </button>
-              <h4 class="modal-title" id="myModalLabel">
-                <img id="myModalHeaderImg" src="https://www.heatery.io/hm-media/hm-img/hm_logo_csq_lg.jpg"/>
-                <br>Welcome to the Circle Squared Data Labs Heatery Map
-              </h4>
-          </div>
-          <div id="myModalBody" class="modal-body">
-              <p><?php get_date_time();?></p>
-          </div>
-      </div>
-  </div>
-</div>-->
-<!-- End Modal -->
+require('modal.php');
+require('navbar.php');
 
-<!-- navbar -->
-<nav id="hm_navbar_top" class="navbar navbar-default navbar-fixed-top">
-    <div id="hm_navbar_container" class="container-fluid">
-        <div id="hm_navbar_header" class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hm_navbar_collapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div id="hm_navbar_collapse" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-left">
-
-              <!-- form -->
-                <form id="gc-form" class="navbar-form navbar-left" role="search" method="post" action="">
-                    <button id="btn-find" type="submit" class="btn btn-default" name="btn-submit" >Find
-                    </button>
-                    <div id="gc-input" class="form-group">
-                        <input id="gc-search-box" name="address" type="text" class="form-control" placeholder="Your Hot Spot.">
-                    </div>
-                </form>
-              <!-- end form -->
-
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">Heatery Map<span class="sr-only">(current)</span></a>
-                </li>
-                <li>
-                    <a href="https://www.heatery.io/login">Login<span class="sr-only">(login)</span></a>
-                </li>
-                <li>
-                    <a href="https://www.heatery.io">Home<span class="sr-only">(home)</span></a>
-                </li>
-                <li>
-                    <a href="#">Circle Squared Data Labs</a>
-                </li>
-                <a id="hm_navbar_brand" class="navbar-brand" href="https://www.heatery.io">
-                    <!--<img id="hm_navbar_brand_img" alt="heatery.io" src="https://www.heatery.io/hm-media/hm-img/hm_logo_csq_lg.jpg"/>-->
-                </a>
-            </ul>
-        </div>
-    </div>
-</nav>
-<!-- end navbar -->
-
-<?php
 $title              = 'Heatery';
-$address            = $_POST['address'];
+$address            = 'Oriental, NC';//$_POST['address'];
 $db                 = connect();
 $geo_var            = geocode($address);
 $latitude           = $geo_var[0];
@@ -132,7 +65,7 @@ function geocode( $address ){
 function get_api_results( $latitude, $longitude ){
   $url = 'https://graph.facebook.com/v2.5/search?q=restaurant&type=place&distance=3200&center='.$latitude.','.$longitude.'&fields=location,name,likes,talking_about_count,were_here_count,description,website,cover,about,culinary_team&limit=250&access_token=1452021355091002|x-ZB0iKqWQmYqnJQ-wXoUjl-XtY';
   $table      = basename( __FILE__ , '.php' );
-  $name       = ( $table . '.json' );
+  $name       = ( './data/' . $table . '.json' );
   $file       = fopen( $name, 'w' );
   $ch         = curl_init();
   curl_setopt( $ch, CURLOPT_URL, $url );
@@ -206,6 +139,8 @@ function insert_api_results( $db, $api_results ) {
 }
 
 function select_api_results( $latitude, $longitude ) {
+  $name                 = ( './data/results.json' );
+  $fp                   = fopen( $name, 'w' );
   $stmt = "SELECT
   fb_web,
   fb_cover,
@@ -230,9 +165,19 @@ function select_api_results( $latitude, $longitude ) {
   AS fb_distance
   FROM top10_markers
   WHERE fb_date = curdate()
+  AND fb_name != 'The Trawl Door'
+  AND fb_name != 'Oriental, North Carolina'
+  AND fb_name != 'Toucan Grill & Fresh Bar'
+  AND fb_name != 'Oriental Smith Creek'
+  AND fb_name != 'Healthy Habits'
+  AND fb_name != 'Kamp Kress'
+  AND fb_name != 'Oriental Bridge'
+
   HAVING fb_distance < 2
-  ORDER BY heatery_score DESC LIMIT 11";
+  ORDER BY heatery_score DESC LIMIT 10";
     return $stmt;
+
+
 }
 
 function populate_variables( $db, $latitude, $longitude ) {
@@ -259,7 +204,7 @@ function populate_variables( $db, $latitude, $longitude ) {
         $fb_cover[$c]         = $obj->fb_cover;
         $fb_about[$c]         = $obj->fb_about;
         $fb_culinary_team[$c] = $obj->fb_culinary_team;
-        $heatery_score[$c]    = ( $obj->heatery_score );
+        $heatery_score[$c]    = $obj->heatery_score;
         $name                 = ( './data/results.json' );
         $fp                   = fopen( $name, 'w' );
         fwrite( $fp, json_encode( $json_results ) );
