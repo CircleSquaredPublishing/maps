@@ -260,7 +260,7 @@ function populate_variables( $db, $latitude, $longitude ) {
         $fb_about[$c]         = $obj->fb_about;
         $fb_culinary_team[$c] = $obj->fb_culinary_team;
         $heatery_score[$c]    = ( $obj->heatery_score );
-        $name                 = ( 'results.json' );
+        $name                 = ( './data/results.json' );
         $fp                   = fopen( $name, 'w' );
         fwrite( $fp, json_encode( $json_results ) );
         fclose( $fp );
