@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forrest Farm Supply</title>
+	<link rel="stylesheet" href="css/infobox.css"/>
+	<link rel = 'stylesheet' href = 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'/>
+</head>
+<body>
+	<div id="map-canvas"></div>
+
+	<!-- HANDLEBARS INFOWINDOW TEMPLATE -->
+	<script id="infoBoxTemplate" type="text/x-handlebars-template">
+		<div id="sv-ib" class="container">
+					<div class="row">
+								<div id="sv-img" class="col-xs-12">
+										<div id="streetview"></div>
+								</div>
+								{{#content}}
+								<div id="ib-info" class="col-xs-12">
+									<div id="ib-name">{{name}}</div>
+									<div>{{address}}</div>
+									<div>{{postal}}</div>
+									<div>{{phone}}</div>
+									<div>{{weekday}}</div>
+									<div>{{saturday}}</div>
+									<div>{{sunday}}</div>
+									<div><a href="{{web}}" target="_blank">{{niceURL}}</a></div>
+								</div>
+								{{/content}}
+						</div>
+				</div>
+		</div>
+	</script>
+
+	<!-- EXTERNAL ASSETS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src	=	"https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+	<script src = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src	=	"js/infobox.min.js"></script>
+	<script src	=	"js/handlebars-v4.0.2.js"></script>
+	<script src	=	"js/initialize.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.gm-style div, .gm-style span, .gm-style label, .gm-style a {
+  font-family: Arial, Helvetica, sans-serif;
+}
+#map-canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#sv-ib {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+  padding: 5px;
+  width: 400px;
+  border: 1px solid #C9C9D1;
+  color: #C9C9D1;
+  background-color: rgba(19, 79, 29, 0.85);
+}
+#sv-ib a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #E76737;
+  text-decoration: none;
+}
+#sv-ib a:hover {
+  color: #C9C9D1;
+}
+#sv-img {
+  width: 400px;
+}
+#streetview {
+  width: 390px;
+  height: 200px;
+}
+#ib-info {
+  width: 400px;
+}
+#ib-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #E76737;
+}
