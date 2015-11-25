@@ -14,7 +14,7 @@ require('modal.php');
 require('navbar.php');
 
 $title              = 'Heatery';
-$address            = 'Oriental, NC';//$_POST['address'];
+$address            = $_POST['address'];
 $db                 = connect();
 $geo_var            = geocode($address);
 $latitude           = $geo_var[0];
