@@ -59,6 +59,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=visualization,places,geometry"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="js/infobox.js"></script>
     <script src="js/handlebars-v4.0.2.js"></script>
     <script src="js/ajax.js"></script>
 </body>
