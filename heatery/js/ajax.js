@@ -78,6 +78,7 @@ function set_markers(map, bounds){
           });
           google.maps.event.addListener(this.marker, 'click', function (){
             infowindow.open(map,this);
+            map.panTo(this.getPosition());
           });
           google.maps.event.addDomListener(map, 'click', function(){
             infowindow.close();
