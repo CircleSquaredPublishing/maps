@@ -10,8 +10,9 @@
 * Author URI:   https://www.heatery.io
 */
 
-require('modal.php');
-require('navbar.php');
+require( 'header.php' );
+require( 'modal.php' );
+require( 'navbar.php' );
 
 $title              = 'Heatery';
 $address            = $_POST['address'];
@@ -41,11 +42,7 @@ function get_date_time() {
 
 function connect () {
   require ( '/Users/admin/Documents/credentials/connect.php' );
-    $host   = HOST;
-    $dbname = DB;
-    $user   = USER;
-    $pass   = PASSWORD;
-    $db     = new mysqli($host, $user, $pass, $dbname);
+    $db     = new mysqli($servername, $username, $password, $dbname);
   return $db;
 }
 
