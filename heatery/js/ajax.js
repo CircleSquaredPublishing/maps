@@ -31,7 +31,7 @@ function initialize() {
 function set_markers(map, bounds){
     var ts   = new Date().getTime();
     var data = {_: ts};
-      $.getJSON(defaults.jsonPath, function(json) {
+      $.getJSON(defaults.jsonPath, data, function(json) {
         var output  = template(json);
         var entry   = $("#info_card").append(output);
         $.each(json, function(key, value) {
