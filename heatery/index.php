@@ -17,35 +17,12 @@
         </div>
     </div>
 
-    <!-- HANDLEBARS INFOWINDOW TEMPLATE -->
-    <script id="infoBoxTemplate" type="text/x-handlebars-template">
-      <div class="container-fluid">
-              {{#each .}}{{#if fb_cover}}
-              <div id="sb-title" class="col-xs-12">
-                {{fb_name}}
-              </div>
-              <hr>
-              <div class="row">
-                  <div id="profile_pic" class="col-xs-12">
-                      <img src="{{fb_cover}}" data-pin-nopin="true">
-                  </div>
-              </div>
-              <div class="row">
-                  <div id="sb-content" class="col-xs-12">
-                      {{fb_about}}
-                      {{fb_description}}
-                  </div>
-              </div><hr>
-              {{/if}}{{/each}}
-          </div>
-    </script>
-
     <!-- HANDLEBARS INFOCARD TEMPLATE -->
     <script id="infoCardTemplate" type="text/x-handlebars-template">
         <div class="container-fluid">
-                {{#each .}}{{#if fb_cover}}
+                {{#each .}}{{#if cover}}
                 <div id="sb-title" class="col-xs-12">
-                  {{fb_name}}
+                  {{cln_name}}
                 </div>
                 <hr>
                 <div class="row">
@@ -55,8 +32,8 @@
                 </div>
                 <div class="row">
                     <div id="sb-content" class="col-xs-12">
-                        {{fb_about}}
-                        {{fb_description}}
+                        {{cln_about}}
+                        {{cln_desc}}
                     </div>
                 </div><hr>
                 {{/if}}{{/each}}

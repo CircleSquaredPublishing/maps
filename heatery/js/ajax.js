@@ -1,7 +1,7 @@
 var heatmap;
 var heatmap_data  = [];
 var streetview = document.createElement("DIV");
-    streetview.style.width  = "350px";
+    streetview.style.width  = "450px";
     streetview.style.height = "225px";
     streetview.style.background = "transparent";
 var infowindow = new google.maps.InfoWindow({
@@ -32,39 +32,27 @@ function set_markers(map, bounds){
     var ts   = new Date().getTime();
     var data = {_: ts};
       $.getJSON(defaults.jsonPath, data, function(json) {
-        var output  = template(json);
-        var entry   = $("#info_card").append(output);
         $.each(json, function(key, value) {
-          this.pano    = null;
-          this.id      = key + 1
-          this.web     = value.fb_web;
-          this.cover   = value.fb_cover;
-          this.about   = value.fb_about;
-          this.chef    = value.fb_culinary_team;
-          this.desc    = value.fb_description;
-          this.name    = value.fb_name;
-          this.lat     = value.fb_lat;
-          this.lng     = value.fb_lng;
-          this.city    = value.fb_city;
-          this.state   = value.fb_state;
-          this.street  = value.fb_street;
-          this.zip     = value.fb_zip;
-          this.tac     = value.fb_talking_about;
-          this.whc     = value.fb_were_here;
-          this.likes   = value.fb_likes;
-          this.score   = Number(value.heatery_score);
-          this.point   = new google.maps.LatLng(this.lat, this.lng);
-          this.heatery = new google.maps.LatLng(this.lat, this.lng, this.score);
-          this.html    = '<div id="iw-container" class="container-fluid">' +
-            '<div id="iw-details" class="row">' +
-            '<div id="iw-title" class="col-xs-12">' +
-            '&nbsp;' + this.name + '</div>' +
-            '<div id="iw-content">' + this.street +
-            '<br></div></div></div></div>';
+          this.pano       = null;
+          this.id         = key + 1
+          this.web        = value.fb_web;
+          this.cover      = value.fb_cover;
+          this.about      = value.fb_about;
+          this.cln_about  = this.about.replace(/\\/g,"");
+          this.chef       = value.fb_culinary_team;
+          this.cln_chef   = this.chef.replace(/\\/g,"");
+          this.desc       = value.fb_description;
+          this.cln_desc   =this.desc.replace(/\\/g,"");
+          this.name       = value.fb_name;
+          this.cln_name   = this.name.replace(/\\/g,"");
+          this.lat        = value.fb_lat;
+          this.lng        = value.fb_lng;
+          this.score      = Number(value.heatery_score);
+          this.point      = new google.maps.LatLng(this.lat, this.lng);
+          this.heatery    = new google.maps.LatLng(this.lat, this.lng, this.score);
           this.marker  = new google.maps.Marker({
             position  : this.point,
-            animation : google.maps.Animation.DROP,
-            title     : this.name,
+            title     : this.cln_name,
             map       : map,
             icon      : 'https://mt.googleapis.com/vt/icon/name=icons/spotlight/spotlight-waypoint-b.png&text='+this.id+'&psize=16&font=fonts/Roboto-Regular.ttf&color=ff333333&ax=44&ay=48'
           });
@@ -76,13 +64,15 @@ function set_markers(map, bounds){
             gradient  : defaults.gradientNew,
             map       : map
           });
+
           google.maps.event.addListener(this.marker, 'click', function (){
             infowindow.open(map,this);
-            map.panTo(this.getPosition());
           });
+
           google.maps.event.addDomListener(map, 'click', function(){
             infowindow.close();
           });
+
           google.maps.event.addListenerOnce(infowindow, 'domready', function(){
            if(this.pano != null) {
               this.pano.unbind("position");
@@ -100,9 +90,48 @@ function set_markers(map, bounds){
               this.pano.bindTo("position", this);
               this.pano.setVisible(true);
           });
+
+          google.maps.event.addListener(infowindow, 'domready', function (){
+            var iwOuter       = $('.gm-style-iw');
+            var iwBackground  = iwOuter.prev();
+            iwBackground.children(':nth-child(2)').css({
+              'display' : 'none'
+            });
+            iwBackground.children(':nth-child(4)').css({
+              'display' : 'none'
+            });
+            iwBackground.children(':nth-child(3)').find('div').children().css({
+              'box-shadow': 'rgba(82, 66, 4, 0.5); 0px 1px 6px',
+              'z-index'   : '1'
+            });
+            var iwCloseBtn = iwOuter.next();
+                iwCloseBtn.css({
+                  opacity         : '1',
+                  right           : '38px',
+                  top             : '3px',
+                  'border-radius' : '13px',
+                  'box-shadow'    : '0 0 5px rgb(82, 66, 4)'
+                });
+            if($('.iw-content').height() < 140){
+              $('.iw-bottom-gradient').css({
+              display : 'none'
+              });
+            }
+            iwCloseBtn.mouseout(function(){
+                    $(this).css({
+                    opacity : '1'
+                    });
+                });
+            });
+
           bounds.extend(this.marker.getPosition());
           map.fitBounds(bounds);
+        });
+
+        this.output  = template(json);
+        this.entry   = $("#info_card").append(this.output);
+
       });
-    });
-  }
+    }
+
 google.maps.event.addDomListener(window, 'load', initialize);
