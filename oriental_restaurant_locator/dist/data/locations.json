@@ -1,0 +1,96 @@
+	[{
+	    "name": "Brantley's Village Restaurant",
+	    "city": "Oriental",
+	    "address": "900 Broad St",
+	    "phone": "(252) 249-3509",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.03178,
+	    "lng": -76.691811,
+	    "web": "",
+	    "hours1": ""
+	  }, {
+	    "name": "The Silos Restaurant",
+	    "city": "Oriental",
+	    "address": "1111 Broad St",
+	    "phone": "(252) 249-1050",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.036819,
+	    "lng": -76.692009,
+	    "web": "http://silosnc.com",
+	    "hours1": "Tuesday-Saturday: 11am-10pm"
+	  }, {
+	    "name": "Oriental Steamer Restaurant & Tavern",
+	    "city": "Oriental",
+	    "address": "401 Broad St",
+	    "phone": "(252) 249-3557",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.026649,
+	    "lng": -76.697853,
+	    "web": "",
+	    "hours1": "Monday-Saturday: 7pm-2am"
+	  }, {
+	    "name": "M & Ms Cafe",
+	    "city": "Oriental",
+	    "address": "205 Water St",
+	    "phone": "(252) 249-2000",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.024933,
+	    "lng": -76.697403,
+	    "web": "",
+	    "hours1": ""
+	  }, {
+	    "name": "Water Street Grill",
+	    "city": "Oriental",
+	    "address": "518 S Water St",
+	    "phone": "(252) 249-4911",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.025364,
+	    "lng": -76.698547,
+	    "web": "http://www.waterstreetgrill.net",
+	    "hours1": "Wednesday-Saturday: 11am-9pm",
+	    "hours2": "Sunday: 9am-3pm"
+	  }, {
+	    "name": "The Bean",
+	    "city": "Oriental",
+	    "address": "304 Hodges St",
+	    "phone": "(252) 249-4918",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.025082,
+	    "lng": -76.695387,
+	    "web": "http://www.thebeanorientalnc.com",
+	    "hours1": "Sun.-Thurs. 7am-7pm",
+	    "hours2": "Fri. & Sat. 7am - 9pm"
+
+	  }, {
+	    "name": "Oriental Marina & Inn / Toucan Grill & Fresh Bar",
+	    "city": "Oriental",
+	    "address": "101 Wall St,",
+	    "phone": "(252) 249-2204",
+	    "state": "NC",
+	    "postal": "28571",
+	    "lat": 35.0247,
+	    "lng": -76.695389,
+	    "web": "http://orientalmarina.com",
+	    "hours1": ""
+	  }, {
+	    "name": "Nels Sports Bar & Grill",
+	    "city": "Oriental",
+	    "address": "802 Broad St",
+	    "state": "NC",
+	    "postal": "28571",
+	    "phone": "(252) 249-1011",
+	    "lat": 35.030150,
+	    "lng": -76.692759,
+	    "web": "http://www.yelp.com/biz/nels-sports-bar-and-grill-oriental",
+	    "hours1": "Monday-Friday: 5pm-2am",
+	    "hours2": "Saturday: 5pm-2am",
+	    "hours3": "Sunday: 10:30am-2am"
+	  }
+
+	]
