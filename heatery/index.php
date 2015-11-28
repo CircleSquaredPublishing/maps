@@ -5,9 +5,6 @@
         <div class="row">
             <div class="col-xs-4" id="left">
                 <div id="info_panel" class="panel panel-default">
-                    <div id="info_head" class="panel-heading">
-                        <h2 id="info_head_title">Find Your Hot Spot.</h2>
-                    </div>
                     <div id="info_card" class="panel-heading">
                         <!-- HANDLEBARS TEMPLATE INJECTED HERE -->
                     </div>
