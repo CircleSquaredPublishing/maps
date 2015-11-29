@@ -87,7 +87,7 @@ body {
     background-color: transparent !important;
 }
 .panel-default {
-    min-width: 375px;
+    min-width: 275px;
     border-color: transparent !important;
     background-color: transparent !important;
 }
@@ -113,13 +113,31 @@ body {
     line-height: 18px;
     text-align:justify;
 }
+#sb-web {
+    margin: 10px 0px;
+    padding: 8px;
+    color: #D5DED9;
+    background-color: rgba(18, 133, 71, 0.8);
+    font-size: 13px;
+    font-weight: 400;
+}
+#sb-web a {
+  font-size:13px;
+  font-weight: 400;
+  color:#D5DED9;
+  text-decoration: none;
+}
+#sb-web a:hover{
+  color:rgb(214, 201, 29);
+}
+
 #sb-title {
     margin: 10px 0px;
     padding: 8px;
     color: #D5DED9;
     background-color: rgba(228, 37, 53, 0.8);
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
 }
 #profile_info {
     width: 100%;
@@ -133,6 +151,7 @@ body {
     width: 100%;
     margin-right: 0px;
     padding-right: 0px;
+    max-height: 200px;
 }
 /* Start infowindow style */
 

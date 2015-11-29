@@ -2,7 +2,7 @@ var heatmap;
 var heatmap_data  = [];
 var streetview = document.createElement("DIV");
     streetview.style.width  = "400px";
-    streetview.style.height = "225px";
+    streetview.style.height = "200px";
     streetview.style.background = "transparent";
 var infowindow = new google.maps.InfoWindow({
     content : streetview
@@ -48,6 +48,9 @@ function set_markers(map, bounds){
           this.cln_name   = this.name.replace(/\\/g,"");
           this.lat        = value.fb_lat;
           this.lng        = value.fb_lng;
+          this.tac        = value.fb_talking_about;
+          this.whc        = value.fb_were_here;
+          this.likes      =value.fb_likes;
           this.score      = Number(value.heatery_score);
           this.point      = new google.maps.LatLng(this.lat, this.lng);
           this.heatery    = new google.maps.LatLng(this.lat, this.lng, this.score);
@@ -124,13 +127,12 @@ function set_markers(map, bounds){
                       });
                   });
                 });
-
           bounds.extend(this.marker.getPosition());
           map.fitBounds(bounds);
         });
 
         this.output  = template(json);
-        this.entry   = $("#info_card").append(this.output);
+        this.entry   = $("#sidebar-nav").append(this.output);
 
       });
     }

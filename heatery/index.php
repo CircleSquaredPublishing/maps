@@ -21,18 +21,14 @@
                 <div id="sb-title" class="col-xs-12">
                   {{cln_name}}
                 </div>
-                <hr>
                 <div class="row">
                     <div id="profile_pic" class="col-xs-12">
                         <img src="{{fb_cover}}" data-pin-nopin="true">
                     </div>
                 </div>
-                <div class="row">
-                    <div id="sb-content" class="col-xs-12">
-                        {{cln_about}}
-                        {{cln_desc}}
-                    </div>
-                </div><hr>
+                <div id="sb-web" class="col-xs-12">
+                <a href="{{web}}" target="_blank">{{niceWeb}}</a>
+              </div>
                 {{/if}}{{/each}}
             </div>
     </script>

@@ -1,0 +1,92 @@
+/*****************************************************************************
+*
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+* File Name: style.css
+* Author: Circle Squared Data Labs
+* Author URI: https://www.csq2.com
+* Description: Heatery-Compact stylesheet
+* Version: 1.0.0
+*
+******************************************************************************/
+
+html, body {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+#wrapper{
+  position:absolute;
+  margin: 50px 0px 0px 50px;
+  height:800px;
+  width:1000px;
+  border: 2px solid #000;
+}
+
+#navbar{
+  position:relative;
+  top:0px;
+  width:100%;
+}
+
+#sidebar-nav, #map-canvas {
+  position: absolute;
+  top: 50px;
+  bottom: 0px;
+  height: auto;
+}
+
+#sidebar-nav {
+  left: 30px;
+  width: 33.3333333%;
+  padding: 5px 0px;
+  min-width:180px;
+  max-width: 300px;
+  overflow-y: scroll;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+#map-canvas {
+  right: 0px;
+  width: 100%;
+}
+
+#sb-title, #sb-web, #sb-web a{
+  color: #D5DED9;
+}
+
+#sb-title, #sb-web {
+  margin: 10px 0px;
+  padding: 4px;
+}
+
+#sb-title {
+  background-color: rgba(228, 37, 53, 0.8);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#profile-pic>img {
+  width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+  max-height: 180px;
+}
+
+#sb-web, #sb-web a{
+  font-size: 13px;
+  font-weight: 400;
+}
+#sb-web {
+  background-color: rgba(18, 133, 71, 0.8);
+}
+
+#sb-web a {
+  text-decoration: none;
+}
+
+#sb-web a:hover {
+  color: rgb(214, 201, 29);
+}
