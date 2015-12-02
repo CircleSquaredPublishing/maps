@@ -1,0 +1,124 @@
+/*****************************************************************************
+*File Name: style.css
+*Author: Circle Squared Data Labs
+*Author URI: https://www.csq2.com
+*Description: Strava Map stylesheet
+*Version: 1.1.0
+******************************************************************************/
+
+html, body {
+  height  : 100%;
+}
+
+p {
+  text-align  : justify;
+  margin      : 25px 10px !important;
+}
+
+#map-canvas {
+  position          : absolute;
+  top               : 0px;
+  right             : 0px;
+  bottom            : 0px;
+  left              : 0px;
+  overflow          : hidden;
+  width             : 100%;
+  height            : calc(100% - 0);
+  background-color  :#000;
+}
+
+#main, #main>.row {
+  height : 100%;
+}
+#main>.row {
+  overflow-y : scroll;
+}
+#main {
+  float : left;
+}
+
+/* Start sidebar info panel */
+
+.panel {
+  border-color      : transparent !important;
+  background-color  : transparent !important;
+}
+.panel-default {
+  min-width         : 375px;
+  border-color      : transparent !important;
+  background-color  : transparent !important;
+}
+#info_head, #info_card {
+  color                   : #D5DED9;
+  border-color            : transparent;
+  border-top-left-radius  : 0px !important;
+  border-top-right-radius : 0px !important;
+  background-color        : rgba(33, 37, 46, 0.7);
+}
+#fb_cover {
+  width           : 100%;
+  padding-bottom  : 10px;
+}
+#sb-content {
+  overflow-y  : auto;
+  max-height  : 175px;
+  font-size   : 12px;
+  line-height : 18px;
+}
+#sb-title {
+  margin            : 10px 0px;
+  padding           : 8px;
+  color             : #D5DED9;
+  background-color  : rgba(228, 37, 53, 0.8);
+  font-size         : 16px;
+  font-weight       : 600;
+}
+#profile_info {
+  margin-left   : 0px;
+  padding-left  : 0px;
+  font-family   : helvetica;
+  font-size     : 13px;
+  font-weight   : 100;
+}
+#profile_pic>img {
+  width         : 100%;
+  margin-right  : 0px;
+  padding-right : 0px;
+}
+
+#capture {
+  padding-left : 35px;
+}
+#iw-container {
+  float             : left;
+  background-color  : rgba(33, 37, 46, 0.7);
+  font-family       : helvetica;
+  font-size         : 14px;
+  padding-bottom    : 10px;
+  max-width         : 300px;
+}
+#iw-details {
+  font-weight : 600;
+}
+#iw-title {
+  font-weight      : 600;
+  background-color : rgba(228, 37, 53, 0.8);
+}
+#iw-content {
+  color : #D5DED9;
+}
+
+.panel {
+  margin-bottom       : 0px !important;
+  border              : none !important;
+  border-radius       : 0px !important;
+  background-color    : #fff;
+  -webkit-box-shadow  : 0 1px 1px rgba(0, 0, 0, .05);
+  box-shadow          : 0 1px 1px rgba(0, 0, 0, .05);
+}
+panel-heading {
+  padding                 : 10px 15px;
+  border-bottom           : none !important;
+  border-top-left-radius  : 0px !important;
+  border-top-right-radius : 0px !important;
+}
