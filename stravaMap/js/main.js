@@ -38,7 +38,7 @@ var map;
 * @type {string}
 */
 
-var jsonPath = ('api_responses/response_');
+var jsonPath = ('../api_responses/response_');
 
 /**
 * Strava segment IDs.
@@ -46,7 +46,7 @@ var jsonPath = ('api_responses/response_');
 * @type {Array}
 */
 
-var files = [10629665,10630567,10630608,6118824,10630643,10630679];
+var files = [3298216,5501191,840170,9220537,4443861,2188357,3969075,7460470];
 
 /**
 *  Reference to the location of kml files containing route data.
@@ -54,7 +54,7 @@ var files = [10629665,10630567,10630608,6118824,10630643,10630679];
 * @type {string}
 */
 
-var src = ('https://www.csq2.com/kml/fondeaux.kml');
+var src = ('https://www.csq2.com/kml/cc3.kml');
 
 /**
 * Google bounds object.
@@ -224,7 +224,7 @@ var GOOGLEMAP = {
       $.ajax({
         type  : 'POST',
         async : false,
-        url   : 'api_call.php',
+        url   : '../api_call.php',
         data: ( {key : file} ),
         success: this.handlerData
         });
