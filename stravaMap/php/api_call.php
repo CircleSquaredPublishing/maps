@@ -54,19 +54,13 @@ select_results($db, $seg_id);
 */
 
 function connect(){
-  require ( '/Users/admin/Documents/credentials/connect.php' );
-    $host   = HOST;
+  require ( '//home/heatery/credentials/connect.php' );
+    $host   = DB_HOST_CSQ2;
     $dbname = STRAVA_DB;
-    $user   = USER;
-    $pass   = PASSWORD;
+    $user   = DB_USER;
+    $pass   = DB_PASS;
     $db     = new mysqli($host, $user, $pass, $dbname);
-
-    if (mysqli_connect_errno()) {
-      printf("Connect failed: %s\n", mysqli_connect_error());
-      exit();
-    } else {
       return $db;
-    }
 }
 
 /**
@@ -201,7 +195,7 @@ function insert_leaderboard( $db, $seg_id ) {
 }
 
 /**
-* @method select_results( srray|$db, integer|$seg_id )
+* @method select_results( array|$db, integer|$seg_id )
 * @param $db
 * @param $seg_id
 */
