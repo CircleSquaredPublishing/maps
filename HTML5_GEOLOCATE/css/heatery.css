@@ -1,0 +1,37 @@
+html,
+body {
+height: 100%;
+}
+
+body {
+padding-top: 50px;
+}
+
+.navbar-custom .icon-bar {
+background-color: #fff;
+}
+
+.navbar-custom {
+background-color: #303030;
+color: #989898;
+}
+
+.navbar-custom li>a:hover,
+.navbar-custom li>a:focus {
+color: #989898;
+color: #989898;
+}
+
+.navbar-custom a {
+color: #989898;
+}
+
+#map-canvas {
+width: 100%;
+height: calc(100% - 0);
+position: absolute;
+right: 0px;
+top: 50px;
+bottom: 0;
+overflow: hidden;
+}

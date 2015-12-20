@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 GEOLOCATION</title>
+    <meta charset="utf-8">
+    <!-- BOOTSTRAP 3.3.5 MINIFIED CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/heatery.css" />
+</head>
+
+<body>
+    <div class="navbar navbar-custom navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Circle Squared Data Labs</a>
+            <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="form-group" style="margin-right:20px;">
+                <form class="form-inline" action="" method="post">
+                    <div id="gc-input" class="input-group" style="margin-top:10px; float: right;">
+                        <span class="input-group-btn">
+<input class="btn btn-success btn-md" id="locate" value="Find" />
+</span>
+                        <input id="address" style="width:250px;"  class="form-control" type="text" placeholder="Your Hot Spot." />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class='main'>
+        <div>
+            <div id="map-canvas"></div>
+            <div class="eventtext">
+            </div>
+        </div>
+    </div>
+    <!-- JQUERY 2.1.4 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- GOOGLE MAPS V3.EXP INCLUDES VISUALIZATION AND PLACES LIBRARIES  -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=false&libraries=visualization,places,geometry"></script>
+    <script src="js/geolocate.js"></script>
+</body>
+
+</html>
