@@ -1,13 +1,28 @@
 <?php
-//error_reporting(E_ALL);
-//ini_set('display_errors', 1);
 /**
-* File Name:    hm_insert.php
-* Description:  Executes INSERT statement into social_data database for JSON results from
-* call to Facebook Graph API. Executes SELECT statement and populates variables with results
-* from the SELECT statement. All the functions for creating the 'results.json' file.
-* Author:       Circle Squared Data Labs
-* Author URI:   https://www.heatery.io
+* @package    Heatery
+* @version    1.0.0 [November 30, 2015]
+* @author     Will Conkwright
+* @copyright  Copyright (c) 2016 Circle Squared Data Labs
+* @license    Licensed MIT
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
 */
 
 require( 'header.php' );
