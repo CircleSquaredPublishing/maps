@@ -81,7 +81,7 @@ function geocode( $address ){
 function get_api_results( $latitude, $longitude, $client_id, $client_secret, $version, $search_options ) {
   $url = "https://api.foursquare.com/v2/venues/explore?v=$version&ll=".$latitude.",".$longitude."&radius=50000&section=coffee&limit=50&novelty=new&client_id=$client_id&client_secret=$client_secret";
   $table      = basename( __FILE__ , '.php' );
-  $name       = ( './data/' . $table . '.json' );
+  $name       = ( 'data/' . $table . '.json' );
   $file       = fopen( $name, 'w' );
   $ch         = curl_init();
   curl_setopt( $ch, CURLOPT_URL, $url );
@@ -213,7 +213,7 @@ function insert_api_results( $db, $api_results ) {
 }
 
 function select_api_results( $latitude, $longitude ) {
-  $name             = ( './data/results.json' );
+  $name             = ( 'data/results.json' );
   $fp               = fopen( $name, 'w' );
   $stmt =
   "SELECT `name`, `phone`, `formattedAddress1`, `city`, `state`, `postal`, `lat`, `lng`, `fs_checkins`, `fs_users`, `fs_tips`, `web`, `fs_price_sym`, `fs_rating`, `hours`, `fs_category`,
@@ -238,7 +238,7 @@ function populate_variables( $db, $latitude, $longitude ) {
         $fs_checkins[$c]  = ( number_format ( $obj->fs_checkins,  0, null, ',' ) );
         $fs_users[$c]     = ( number_format ( $obj->fs_users,     0, null, ',' ) );
         $fs_tips[$c]      = ( number_format ( $obj->fs_tips,      0, null, ',' ) );
-        $name             = ( './data/results.json' );
+        $name             = ( 'data/results.json' );
         $fp               = fopen( $name, 'w' );
         fwrite( $fp, json_encode( $json_results ) );
         fclose( $fp );

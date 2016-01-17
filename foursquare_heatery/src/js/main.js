@@ -56,9 +56,7 @@ function initialize() {
 
 function set_markers(map, bounds) {
   var ts = new Date().getTime();
-  var data = {
-    _: ts
-  };
+  var data = { _:ts };
   $.getJSON(defaults.jsonPath, data, function(json) {
     $.each(json, function(key, value) {
       this.pano = null;
