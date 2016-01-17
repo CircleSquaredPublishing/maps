@@ -71,11 +71,11 @@
 </script>
 
 <!-- EXTERNAL ASSETS -->
-<script src="dist/js/jquery.min.js"></script>
-<script src="dist/js/googleapis.min.js"></script>
-<script src="dist/js/bootstrap.min.js"></script>
-<script src="dist/js/jquery-ui.min.js"></script>
-<script src="dist/js/handlebars-v4.0.2.js"></script>
+<script src="dist/js/lib/jquery.min.js"></script>
+<script src="dist/js/lib/googleapis.min.js"></script>
+<script src="dist/js/lib/bootstrap.min.js"></script>
+<script src="dist/js/lib/jquery-ui.min.js"></script>
+<script src="dist/js/lib/handlebars-v4.0.2.js"></script>
 <script src="dist/js/main.min.js"></script>
 </body>
 
