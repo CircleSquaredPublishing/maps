@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title><?php page_title( $title ); ?></title>
+<title><?php page_title(); ?></title>
 <!-- BEGIN META TAGS -->
   <meta charset="UTF-8" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
