@@ -26,10 +26,8 @@
 */
 
 require( 'header.php' );
-require( 'modal.php' );
 require( 'navbar.php' );
 
-$title              = 'Heatery';
 $address            = $_POST['address'];
 $db                 = connect();
 $geo_var            = geocode($address);
@@ -40,13 +38,16 @@ $api_results        = get_api_results( $latitude, $longitude );
 $insert_api_results = insert_api_results( $db, $api_results );
 $pop_var            = populate_variables( $db, $latitude, $longitude );
 
-function page_title ( $title ) {
-  if( isset( $title ) && is_string( $title ) ){
-      $page_title = print_r( $title );
-  } else {
-      echo 'Find Your Hot Spot.';
-    }
-  return $page_title;
+function page_title() {
+  $title = 'Heatery';
+  if( isset( $title ) && is_string( $title ) )
+  {
+    print_r( $title );
+  }
+  else
+  {
+    print_r( 'Circle Squared Data Labs' );
+  }
 }
 
 function get_date_time() {
