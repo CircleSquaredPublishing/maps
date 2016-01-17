@@ -1,0 +1,229 @@
+$grey_font:#D5DED9;
+$black:#000;
+$med_grey:#D6D6D6;
+$iw_title:rgba(228, 37, 53, 0.8);
+$navbar:rgba(33, 37, 46, 1);
+$navbar_active:rgba(255, 255, 255, 0.2);
+$navbar_font:#DCF7F3;
+$button:#4B3E4D;
+$button_active:#E33258;
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  padding-top: 50px;
+}
+
+hr {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+  border: 0;
+  border-top: 1px solid $med_grey !important;
+}
+
+a {
+  color: $grey_font !important;
+  overflow-wrap: break-word;
+  text-decoration: none;
+  &:hover {
+    color: $black !important;
+    text-decoration: none !important;
+  }
+}
+
+#map-canvas {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: calc(100% - 0);
+  background-color: $black;
+}
+
+#main {
+  height: 100%;
+  > .row {
+    height: 100%;
+    overflow-y: scroll;
+  }
+  float: left;
+}
+
+#left {
+  margin-top: 30px;
+}
+
+/*Begin Navbar*/
+
+#hm_navbar_top, #hm_navbar_collapse {
+  background-color: $navbar;
+  border-color: transparent !important;
+  color: $navbar_font;
+}
+
+#hm_navbar_brand_img {
+  height: 45px;
+  width: 45px;
+  margin-top: -11px;
+}
+
+#hm_navbar_top {
+  li > a:hover, .active > a, li > a:focus {
+    background: $navbar_active;
+    color: $navbar_font;
+  }
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: $navbar_font;
+}
+
+/*Begin Buttons*/
+
+#gc-search-box {
+  width: 250px;
+  background-color: rgba(233, 236, 217, 0.7);
+  border: none;
+  color: $grey_font;
+  letter-spacing: 1.5px;
+}
+
+#btn-find {
+  background-color: $button;
+  color: $navbar_font;
+  border-color: transparent;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-weight: 200;
+  &:hover {
+    background-color: $button_active;
+    color: $grey_font;
+    border: 1px solid $grey_font;
+  }
+}
+
+/* Start sidebar info panel */
+
+.panel {
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+.panel-default {
+  min-width: 275px;
+  border-color: transparent !important;
+  background-color: transparent !important;
+}
+
+#info_head, #info_card {
+  color: $grey_font;
+  border-color: transparent;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  background-color: rgba(33, 37, 46, 0.7);
+}
+
+#info_head_title {
+  text-align: center;
+}
+
+#fb_cover {
+  width: 100%;
+  padding-bottom: 10px;
+}
+
+#sb-content {
+  overflow-y: auto;
+  max-height: 175px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: justify;
+}
+
+#sb-web {
+  margin: 10px 0px;
+  padding: 8px;
+  color: $grey_font;
+  background-color: rgba(18, 133, 71, 0.8);
+  font-size: 13px;
+  font-weight: 400;
+  a {
+    font-size: 13px;
+    font-weight: 400;
+    color: $grey_font;
+    text-decoration: none;
+    &:hover {
+      color: rgb(214, 201, 29);
+    }
+  }
+}
+
+#sb-title {
+  margin: 10px 0px;
+  padding: 8px;
+  color: $grey_font;
+  border: 1px solid $grey_font;
+  background-color: rgba(228, 37, 53, 0.5);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#profile_info {
+  width: 100%;
+  margin-left: 0px;
+  padding-left: 0px;
+  font-family: helvetica;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+#profile_pic > img {
+  width: 100%;
+  margin-right: 0px;
+  padding-right: 0px;
+  max-height: 200px;
+}
+
+/* Start infowindow style */
+
+#iw-container {
+  float: left;
+  background-color: rgba(33, 37, 46, 0.7);
+  font-family: helvetica;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+#iw-details {
+  font-weight: 600;
+}
+
+#iw-title {
+  font-weight: 600;
+  background-color: $iw_title;
+}
+
+#iw-content {
+  color: $grey_font;
+}
+
+.panel {
+  margin-bottom: 0px !important;
+  border: none !important;
+  border-radius: 0px !important;
+  background-color: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+panel-heading {
+  padding: 10px 15px;
+  border-bottom: none !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}

@@ -1,4 +1,4 @@
-
-heatery/data/results.json
-
-heatery/data/functions.json
+heatery/data/**
+foursquare_heatery/data/**
+foursquare_heatery/node_modules/**
+foursquare_heatery/dist/**
