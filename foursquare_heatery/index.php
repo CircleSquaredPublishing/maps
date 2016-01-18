@@ -49,6 +49,8 @@
     {{#each .}}{{#if name}}
     <div id="sb-title" class="col-xs-12">
       <span class="glyphicon glyphicon-tag"></span>&nbsp;{{fs_category}}
+      <br>
+      <span class="glyphicon glyphicon-time"></span>&nbsp;{{hours_status}}
       <hr>
       <span class="glyphicon glyphicon-map-marker"></span>&nbsp;{{cln_name}}
       <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{address}}

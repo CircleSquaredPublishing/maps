@@ -72,6 +72,7 @@ function set_markers(map, bounds) {
       this.lat = value.lat;
       this.lng = value.lng;
       this.is_open = value.hours;
+      this.hours_status = value.hours_status;
       this.score = Number(value.fs_checkins);
       this.point = new google.maps.LatLng(this.lat, this.lng);
       this.heatery = new google.maps.LatLng(this.lat, this.lng, this.score);

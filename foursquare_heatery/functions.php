@@ -133,9 +133,10 @@ function insert_api_results( $db, $api_results ) {
           `fs_tips_userFirst`,
           `fs_tips_userLast`,
           `fs_tips_userPicPre`,
-          `fs_tips_userPicSuff`)
-          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-      $stmt->bind_param("dsssddisssssssiiisssdisissssiissss",
+          `fs_tips_userPicSuff`,
+          `hours_status`)
+          VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+      $stmt->bind_param("dsssddisssssssiiisssdisissssiisssss",
           $fsid,
           $fs_name,
           $fs_phone,
@@ -169,7 +170,8 @@ function insert_api_results( $db, $api_results ) {
           $fs_tips_userFirst,
           $fs_tips_userLast,
           $fs_tips_userPicPre,
-        $fs_tips_userPicSuff);
+          $fs_tips_userPicSuff,
+          $hours_status);
           $fsid=               mysqli_real_escape_string($db,$v2['venue']['id']);
           $fs_name=            mysqli_real_escape_string($db,$v2['venue']['name']);
           $fs_phone=           mysqli_real_escape_string($db,$v2['venue']['contact']['formattedPhone']);
@@ -204,6 +206,7 @@ function insert_api_results( $db, $api_results ) {
           $fs_tips_userLast=      mysqli_real_escape_string($db,$v4['user']['lastName']);
           $fs_tips_userPicPre=    mysqli_real_escape_string($db,$v4['user']['photo']['prefix']);
           $fs_tips_userPicSuff=   mysqli_real_escape_string($db,$v4['user']['photo']['suffix']);
+          $hours_status=          mysqli_real_escape_string($db,$v2['venue']['hours']['status']);
           $stmt->execute();
         }
       }
@@ -216,7 +219,7 @@ function select_api_results( $latitude, $longitude ) {
   $name             = ( 'data/results.json' );
   $fp               = fopen( $name, 'w' );
   $stmt =
-  "SELECT `name`, `phone`, `formattedAddress1`, `city`, `state`, `postal`, `lat`, `lng`, `fs_checkins`, `fs_users`, `fs_tips`, `web`, `fs_price_sym`, `fs_rating`, `hours`, `fs_category`,
+  "SELECT `name`, `phone`, `formattedAddress1`, `city`, `state`, `postal`, `lat`, `lng`, `fs_checkins`, `fs_users`, `fs_tips`, `web`, `fs_price_sym`, `fs_rating`, `hours`, `hours_status`, `fs_category`,
   TRUNCATE((SQRT ( POW ( 69.1 * ( lat - $latitude ), 2 ) + POW ( 69.1 * ( $longitude - lng ) * COS ( lat/ 57.3 ), 2 ) ) * 0.621371),2)
   AS distance
   FROM foursquare_explore
@@ -238,6 +241,7 @@ function populate_variables( $db, $latitude, $longitude ) {
         $fs_checkins[$c]  = ( number_format ( $obj->fs_checkins,  0, null, ',' ) );
         $fs_users[$c]     = ( number_format ( $obj->fs_users,     0, null, ',' ) );
         $fs_tips[$c]      = ( number_format ( $obj->fs_tips,      0, null, ',' ) );
+        $hours_status[$c] = ( $obj->hours_status);
         $name             = ( 'data/results.json' );
         $fp               = fopen( $name, 'w' );
         fwrite( $fp, json_encode( $json_results ) );
